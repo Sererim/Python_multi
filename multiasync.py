@@ -1,3 +1,6 @@
+"""
+Image downloader that uses multiprocessing and async.
+"""
 import requests
 import time
 import multiprocessing
@@ -27,6 +30,8 @@ async def multiproceamain(urls: list[str]):
     
     for url in urls:
         task = asyncio.create_task(download_image(url))
+    
+    
 
 
 if __name__ == "__main__":
@@ -40,4 +45,5 @@ if __name__ == "__main__":
         asyncio.run(multiproceamain(urls))
     except KeyboardInterrupt:
         pass
+    print(f"Program downloaded all images in {time.time() - start_time:.2f}")
     

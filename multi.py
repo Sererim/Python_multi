@@ -1,3 +1,6 @@
+"""
+Image downloader that uses multiprocessing and threading⌈.
+"""
 import time
 import requests
 import concurrent.futures
@@ -37,6 +40,9 @@ def process_task(url_chunks):
     
     for proc in processes:
         proc.join()
+    
+    print(f"Program downloaded all images in {time.time() - start_time:.2f}")
+    
 
 
 if __name__ == "__main__":

@@ -1,3 +1,7 @@
+"""
+Image downloader that uses threading.    
+"""
+
 import threading
 import time
 import requests
@@ -28,6 +32,8 @@ def thmain(urls: list[str]):
     
     for thread in threads:
         thread.join()
+    
+    print(f"Program downloaded all images in {time.time() - start_time:.2f}")
 
 
 if __name__ == "__main__":

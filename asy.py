@@ -24,6 +24,7 @@ async def main(urls: list[str]):
         task = asyncio.ensure_future(download(url))
         tasks.append(task)
     await asyncio.gather(*tasks)
+    print(f"Program downloaded all images in {time.time() - start_time:.2f}")
 
 start_time = time.time()
 

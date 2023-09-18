@@ -1,3 +1,6 @@
+"""
+Image downloader that uses multiprocessing.
+"""
 from multiprocessing import Process, Pool
 import time
 import requests
@@ -30,3 +33,5 @@ if __name__ == "__main__":
         
     for process in processes:
         process.join()
+
+    print(f"Program downloaded all images in {time.time() - start_time:.2f}")
